@@ -66,10 +66,11 @@ end
 def checkout(cart, coupons)
   checkout_total = 0
    
-  cart = consolidate_cart(cart)
-  applied_cart = apply_coupons(cart, coupons)
-  applied_clear = apply_clearance(cart)
+  consol_cart = consolidate_cart(cart)
+  applied_cart = apply_coupons(consol_cart, coupons)
+  applied_cart = apply_clearance(applied_cart)
   
+  applied_cart3.each do item,
   
   if checkout_total > 100
     checkout_total * 0.9
