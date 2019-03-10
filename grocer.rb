@@ -70,8 +70,8 @@ def checkout(cart, coupons)
   applied_cart = apply_coupons(consol_cart, coupons)
   applied_cart = apply_clearance(applied_cart)
   
-  applied_cart3.each do item,
-  
+  applied_cart3.each do |item,info|
+    checkout_total += info[:price] * info[:count].to_f
   if checkout_total > 100
     checkout_total * 0.9
   else
