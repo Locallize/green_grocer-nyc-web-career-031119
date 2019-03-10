@@ -64,10 +64,17 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
+  checkout_total = 0
+   
+  cart = consolidate_cart(cart)
+  applied_cart = apply_coupons(cart, coupons)
+  applied_clear = apply_clearance(cart)
   
-  if  > 100
-    * .9
+  
+  if checkout_total > 100
+    checkout_total * 0.9
   else
     checkout_total
   end
+  checkout_total
 end
