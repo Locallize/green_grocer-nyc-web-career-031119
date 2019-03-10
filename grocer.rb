@@ -53,6 +53,7 @@ new_hash = {}
       end
     end
   end
+  new_hash[grocery] = info
   end
   new_hash
 end
