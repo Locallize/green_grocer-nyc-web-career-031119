@@ -39,7 +39,7 @@ new_hash = {}
   coupons.each do |coupon_hash|
     item = coupon_hash[:item]
       if cart[name] && cart[item][:count] >= coupon_hash[:num]
-        cart[item][:count] -= coupon_hash[:num]
+        # cart[item][:count] -= coupon_hash[:num]
         if cart["#{item} W/COUPON"]
           cart["#{item} W/COUPON"][:count] += 1
         else
