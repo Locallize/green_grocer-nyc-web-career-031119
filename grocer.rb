@@ -34,7 +34,7 @@ end
 
 
 def apply_coupons(cart, coupons)
-new_hash = {}
+# new_hash = {}
 
   coupons.each do |coupon_hash|
     item = coupon_hash[:item]
@@ -45,7 +45,7 @@ new_hash = {}
         else
           cart["#{item} W/COUPON"] = {:price => coupon_hash[:cost], :clearance => cart[item][:clearance], :count => 1}
         end
-      # cart[item][:count] -= coupon[:num]
+      
   end
   end
   cart
@@ -74,9 +74,9 @@ def checkout(cart, coupons)
     checkout_total += info[:price] * info[:count].to_f 
   end
   if checkout_total > 100
-    checkout_total * 0.9
+    checkout_total * 0.90
   else
-    checkout_total
+    checkout_total 
   end
   checkout_total
 end
