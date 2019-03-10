@@ -49,6 +49,7 @@ new_hash = {}
         
         new_hash["#{item} W/COUPON"][:clearance] = cart[name]
       end
+    end
   end
   end
   new_hash
