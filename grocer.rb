@@ -46,8 +46,7 @@ new_hash = {}
         else
           new_hash["#{item} W/COUPON"][:count] = 1
           new_hash["#{item} W/COUPON"][:price] = coupon_hash[:cost]
-          
-          new_hash["#{item} W/COUPON"][:clearance] = cart[name]
+          new_hash["#{item} W/COUPON"][:clearance] = info[:clearance]
       end
     end
   end
