@@ -38,16 +38,18 @@ new_hash = {}
 
   coupons.each do |coupon_hash|
     item = coupon_hash[:item]
-    if cart.keys.include?(item) && cart[item][:count] >= coupon_hash[:num]
-      cart[item][:count] -= coupon_hash[:num]
-    elsif cart["#{item} W/COUPON"]
-      cart["#{item} W/COUPON"][:count] += 1
-    else
-      cart["#{item} W/COUPON"][:count] = 1
-      cart["#{item} W/COUPON"][:price] = coupon_hash[:cost]
-      
-      cart["#{item} W/COUPON"][:clearance] = cart[mame]
-    end
+    cart.each do |grocery, info|
+      if cart.keys.include?(item) && cart[item][:count] >= coupon_hash[:num]
+        cart[item][:count] -= coupon_hash[:num]
+      elsif cart["#{item} W/COUPON"]
+        cart["#{item} W/COUPON"][:count] += 1
+      else
+        cart["#{item} W/COUPON"][:count] = 1
+        cart["#{item} W/COUPON"][:price] = coupon_hash[:cost]
+        
+        cart["#{item} W/COUPON"][:clearance] = cart[mame]
+      end
+  end
   end
   cart
 end
