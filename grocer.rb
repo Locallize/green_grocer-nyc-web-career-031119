@@ -64,5 +64,10 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # code here
+  
+  if  > 100
+    * .9
+  else
+    checkout_total
+  end
 end
